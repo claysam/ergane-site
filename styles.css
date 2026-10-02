@@ -1,0 +1,177 @@
+/* The owl's palette, from docs/brand.md in the app's repository. */
+:root {
+  --cream: #F3EADB;
+  --warm-clay: #A8643F;
+  --dark-clay: #5B3A29;
+  --kiln-brown: #3A261C;
+
+  --page: var(--cream);
+  --text: var(--dark-clay);
+  --strong: var(--kiln-brown);
+  --line: var(--warm-clay);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: var(--kiln-brown);
+    --text: var(--cream);
+    --strong: var(--cream);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--strong);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 3px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--line);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+h1,
+h2 {
+  color: var(--strong);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+/* The home page: the owl and wordmark in the middle. */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.25rem 2rem;
+}
+
+.hero img {
+  width: min(22rem, 80vw);
+  height: auto;
+}
+
+.hero h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.hero .lead {
+  max-width: 30rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.25rem;
+}
+
+.hero .note {
+  max-width: 30rem;
+  margin: 0.75rem 0 0;
+}
+
+.hero .soon {
+  margin: 2rem 0 0;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.9375rem;
+  letter-spacing: 0.04em;
+}
+
+/* Every other page: a bar with the owl, then a column of text. */
+.bar {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.bar .home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--strong);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.page {
+  flex: 1;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.page h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.page h2 {
+  margin: 2.25rem 0 0.25rem;
+  font-size: 1.3125rem;
+}
+
+.page p {
+  margin: 0.75rem 0 0;
+}
+
+.page ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.page li {
+  margin-top: 0.4rem;
+}
+
+.page li::marker {
+  color: var(--line);
+}
+
+.page .date {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  padding: 1.5rem 1.25rem 2rem;
+  font-size: 0.9375rem;
+}
