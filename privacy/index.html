@@ -60,7 +60,8 @@
         <li>A page from a build, when you tap Share or Update shared copy: the words the page shows, its layout, and the photos you leave ticked. Hidden lines, unused photos, captions and file names stay on your phone. Prices and outcome notes go only if you tick them.</li>
         <li>Who you follow, follow requests and approvals, followers you remove, and people you block.</li>
         <li>Reports you make: what you reported, the reason and any details you type. Appeals you make: what you appeal and the words you type.</li>
-        <li>Clubs and groups you make, join, ask to join or leave, and your role in them. When you run a club or group, its name, handle, description, location, photo, rules and places.</li>
+        <li>Clubs and groups you make, join, ask to join or leave, and your role in them. When you run a club or group, its name, handle, description, location or area, photo, rules and places, and whether a club is a studio or a community.</li>
+        <li>When you run a studio, its website or social page, and its Google Maps link, from which our server reads the studio's place on a map. Its owners can add a phone number and an email address for the studio.</li>
         <li>Organisations you make or run: the name, the rules and the public or private setting shared with every club, which clubs are in it, and who owns it.</li>
         <li>Club posts, discussion posts with up to 4 photos, and replies.</li>
         <li>Comments you write on shared pages. On your own pages, whether comments are on, any comment you hide, and any poll you add: its question and options.</li>
@@ -78,6 +79,7 @@
         <li>A page for followers reaches your followers. A public page reaches everyone signed in, while your profile is public, and shows in the Everyone feed.</li>
         <li>A page, post or event in a club or group reaches the people its audience lets in. A Public page in a public club reaches anyone signed in, even when your profile is private.</li>
         <li>A club's or group's people see who belongs to it. People outside see that you belong to a public club only if you turn on Show my membership.</li>
+        <li>Anyone signed in sees whether a club is a studio or a community, and whether a studio is confirmed. Once it is confirmed, whoever can see the club sees its website. Only a studio's owners and our moderators see its phone number and email address.</li>
         <li>Anyone signed in sees an organisation's name and its clubs. Only its owners see who owns it, and each club's number of members, drop-ins and requests, never names.</li>
         <li>Who is going to an event shows by name to the club's or group's people. Everyone else sees a count.</li>
         <li>A club's library shows to the club's people, and a group's to whoever can see the group. A library glaze's recipe shows to them only when Recipe public is on. When it is off, only the club's owners and admins, or the group's organisers, see it. A piece shows its photo to everyone who sees the library, even when its page is for your followers only. A glaze you share to a club reaches the audience you chose, with your handle.</li>
@@ -96,13 +98,15 @@
       <p>A word list on our server checks handles, display names, bios, club names and page titles. If one holds a word we do not allow, we refuse it and tell you why. We do not record what was refused.</p>
       <p>If the words on a page, post, reply, comment, poll, event, library item, shared glaze or piece hold a slur, it waits for a moderator. Nobody else sees it until a moderator has looked. You see &quot;Waiting for review&quot;.</p>
       <p>During the beta, no outside moderation service checks what you share. Pages, photos and posts reach the people you chose straight away. Before the public release, an automated service will check them first, and we will update this policy to name it.</p>
+      <p>We check that a studio is real before it shows as one. If its email address is at its website's address, we email a code there, and the right code confirms it. Otherwise a moderator looks at its website, Maps link, phone number or email address, and confirms or declines it. Its owners and admins are told, and can appeal a decline once.</p>
       <p>A moderator reads every report. A moderator can hide or remove what breaks the terms, and suspend an account. Each action and its reason go in a log. We tell you in the app what we did and why, and you can appeal once.</p>
       <p>Our lawful basis for checks and moderation is our legitimate interests: keeping Ergane safe, and meeting our duties under the Online Safety Act.</p>
     </section>
     <section id="server">
       <h2>Where your data is held</h2>
       <p>Supabase runs our server, in its London data centre. Supabase is a US company, so its staff may reach the data from outside the UK to run the service.</p>
-      <p>Brevo, a French company, emails your sign-in codes from its data centres in the European Union. It handles your email address and the code.</p>
+      <p>Brevo, a French company, emails your sign-in codes, and a studio's code, from its data centres in the European Union. It handles the email address and the code.</p>
+      <p>To find a studio's place on a map, our server opens its Google Maps link once, at Google. Google sees a request from our server, not from you.</p>
       <p>Expo, a US company, delivers notifications if you turn them on. It handles an address for your phone and the words of each notification, and passes them to Apple or Google.</p>
       <p>These providers work for us under their data processing terms, which cover data that leaves the UK. We do not sell your data or share it for marketing.</p>
     </section>
@@ -122,7 +126,8 @@
         <li>Notifications: deleted from our server 7 days after we make them.</li>
         <li>An upload that never finishes: deleted after 24 hours.</li>
         <li>Reports, appeals and moderation records: while the beta runs. Before the public release, we will delete them or say here how long we keep them.</li>
-        <li>Sign-in emails: Brevo keeps a record of each one for 1 month.</li>
+        <li>A studio's phone number and email address: until an owner changes them, the club becomes a community, or it is archived. A studio's code: until it is used, or replaced by a new one. Each lasts 15 minutes.</li>
+        <li>Sign-in and studio code emails: Brevo keeps a record of each one for 1 month.</li>
         <li>Server logs: Supabase keeps technical logs, such as the internet address your phone connected from, for 1 day.</li>
       </ul>
       <p>During the beta, our server keeps no backups. What you delete goes from our server at once.</p>
