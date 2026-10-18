@@ -5,7 +5,13 @@
 // It asks the server's join-card function for the club's name and photo, and nothing else.
 // A private club with its link off, an archived or hidden club and a handle nobody has all
 // get the same answer: "This link doesn't lead to a club."
+//
+// On an iPhone with Ergane, iOS opens the club in the app before this page loads, through
+// Universal Links (.well-known/apple-app-site-association). This page is for everyone else.
 (function () {
+  // The studio beta's TestFlight public link. At the App Store release, replace the button
+  // below with the App Store and Google Play listings.
+  var BETA_LINK = 'https://testflight.apple.com/join/REPLACE';
   var match = /^\/join\/@?([A-Za-z0-9_]{3,30})\/?$/.exec(window.location.pathname);
   if (!match) return;
   var handle = match[1].toLowerCase();
@@ -50,18 +56,17 @@
     children.push(el('h1', null, club.name));
     children.push(el('p', 'join-lead', club.private ? 'Ask to join ' + club.name + ' on Ergane' : 'Join us on Ergane'));
 
-    // The apps are not in the stores yet. Until they are, these lead to the home page.
+    // During the beta, Ergane is on iPhone only, through TestFlight.
     var stores = el('p', 'join-buttons');
-    var appStore = el('a', 'join-button', 'App Store');
-    appStore.href = '/';
-    var googlePlay = el('a', 'join-button', 'Google Play');
-    googlePlay.href = '/';
-    stores.append(appStore, googlePlay);
+    var beta = el('a', 'join-button join-button-main', 'Get the beta on TestFlight');
+    beta.href = BETA_LINK;
+    stores.append(beta);
     children.push(stores);
+    children.push(el('p', 'join-note', 'Install TestFlight from the App Store first, then come back to this page.'));
 
     children.push(el('p', 'join-note', 'Already have Ergane?'));
     var open = el('p', 'join-buttons');
-    var openApp = el('a', 'join-button join-button-main', 'Open in Ergane');
+    var openApp = el('a', 'join-button', 'Open in Ergane');
     openApp.href = 'ergane://join/' + handle;
     open.append(openApp);
     children.push(open);
