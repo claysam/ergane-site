@@ -9,9 +9,12 @@
 // On an iPhone with Ergane, iOS opens the club in the app before this page loads, through
 // Universal Links (.well-known/apple-app-site-association). This page is for everyone else.
 (function () {
-  // The studio beta's TestFlight public link. At the App Store release, replace the button
-  // below with the App Store and Google Play listings.
+  // The studio beta's TestFlight public link.
   var BETA_LINK = 'https://testflight.apple.com/join/REPLACE';
+  // Ergane's Apple ID in App Store Connect, a number. Blank, the page sends people to the
+  // TestFlight beta. Filled, it sends them to the App Store instead. Fill it on release day,
+  // not before: the App Store page works only once the app is live.
+  var APP_STORE_ID = '';
   var match = /^\/join\/@?([A-Za-z0-9_]{3,30})\/?$/.exec(window.location.pathname);
   if (!match) return;
   var handle = match[1].toLowerCase();
@@ -56,13 +59,22 @@
     children.push(el('h1', null, club.name));
     children.push(el('p', 'join-lead', club.private ? 'Ask to join ' + club.name + ' on Ergane' : 'Join us on Ergane'));
 
-    // During the beta, Ergane is on iPhone only, through TestFlight.
+    // The first release is iPhone only, so Android gets a line, not a button.
     var stores = el('p', 'join-buttons');
-    var beta = el('a', 'join-button join-button-main', 'Get the beta on TestFlight');
-    beta.href = BETA_LINK;
-    stores.append(beta);
-    children.push(stores);
-    children.push(el('p', 'join-note', 'Install TestFlight from the App Store first, then come back to this page.'));
+    if (APP_STORE_ID) {
+      var store = el('a', 'join-button join-button-main', 'Get Ergane on the App Store');
+      store.href = 'https://apps.apple.com/app/id' + APP_STORE_ID;
+      stores.append(store);
+      children.push(stores);
+      children.push(el('p', 'join-note', 'Install Ergane, then come back to this page and tap Open in Ergane.'));
+      children.push(el('p', 'join-note', 'On Android? Ergane comes to Google Play later.'));
+    } else {
+      var beta = el('a', 'join-button join-button-main', 'Get the beta on TestFlight');
+      beta.href = BETA_LINK;
+      stores.append(beta);
+      children.push(stores);
+      children.push(el('p', 'join-note', 'Install TestFlight from the App Store first, then come back to this page.'));
+    }
 
     children.push(el('p', 'join-note', 'Already have Ergane?'));
     var open = el('p', 'join-buttons');
