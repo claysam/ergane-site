@@ -1,3 +1,25 @@
+/* Figtree, the app's font, under the SIL Open Font License 1.1 in assets/fonts/OFL.txt. */
+@font-face {
+  font-family: Figtree;
+  src: url("/assets/fonts/Figtree_400Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Figtree;
+  src: url("/assets/fonts/Figtree_700Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Figtree;
+  src: url("/assets/fonts/Figtree_800ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-display: swap;
+}
+
 /* The owl's palette, from docs/brand.md in the app's repository. */
 :root {
   --cream: #F3EADB;
@@ -35,7 +57,7 @@ body {
   flex-direction: column;
   background: var(--page);
   color: var(--text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: Figtree, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.6;
 }
@@ -61,8 +83,7 @@ a:focus-visible {
 h1,
 h2 {
   color: var(--strong);
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.25;
 }
 
@@ -121,10 +142,13 @@ h2 {
   align-items: center;
   gap: 0.6rem;
   color: var(--strong);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.25rem;
-  letter-spacing: 0.08em;
   text-decoration: none;
+}
+
+/* The wordmark, drawn in W01 like the home page's. */
+.bar .home svg {
+  width: auto;
+  height: 1.25rem;
 }
 
 .page {
@@ -138,6 +162,7 @@ h2 {
 .page h1 {
   margin: 0;
   font-size: 2rem;
+  font-weight: 800;
 }
 
 .page h2 {
@@ -217,7 +242,7 @@ h2 {
   border-radius: 12px;
   box-shadow: 3px 3px 0 var(--strong);
   color: var(--strong);
-  font-weight: 600;
+  font-weight: 800;
   text-decoration: none;
 }
 
