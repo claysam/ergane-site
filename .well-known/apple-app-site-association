@@ -2,11 +2,11 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["TEAMID.works.ergane.app"],
+        "appIDs": ["Z8S9C95983.works.ergane.app"],
         "components": [{ "/": "/join/*", "comment": "A club's QR code and join link" }]
       },
       {
-        "appID": "TEAMID.works.ergane.app",
+        "appID": "Z8S9C95983.works.ergane.app",
         "paths": ["/join/*"]
       }
     ]

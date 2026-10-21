@@ -10,7 +10,7 @@
 // Universal Links (.well-known/apple-app-site-association). This page is for everyone else.
 (function () {
   // The studio beta's TestFlight public link.
-  var BETA_LINK = 'https://testflight.apple.com/join/REPLACE';
+  var BETA_LINK = 'https://testflight.apple.com/join/Z191Ncru';
   // Ergane's Apple ID in App Store Connect, a number. Blank, the page sends people to the
   // TestFlight beta. Filled, it sends them to the App Store instead. Fill it on release day,
   // not before: the App Store page works only once the app is live.
