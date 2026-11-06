@@ -14,7 +14,7 @@
   // Ergane's Apple ID in App Store Connect, a number. Blank, the page sends people to the
   // TestFlight beta. Filled, it sends them to the App Store instead. Fill it on release day,
   // not before: the App Store page works only once the app is live.
-  var APP_STORE_ID = '';
+  var APP_STORE_ID = '6820437652';
   var match = /^\/join\/@?([A-Za-z0-9_]{3,30})\/?$/.exec(window.location.pathname);
   if (!match) return;
   var handle = match[1].toLowerCase();
