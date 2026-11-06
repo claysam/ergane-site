@@ -250,3 +250,24 @@ h2 {
   background: var(--line);
   color: var(--cream);
 }
+
+/* On a Kiln brown page, buttons and pills take the app's dark-mode colours
+   from src/theme/colours.ts (darkColours): accent fill, Kiln brown text, hard shadow. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dark-accent: #BC8768;
+    --dark-hard: #1D130E;
+  }
+
+  .join-button,
+  .join-button-main,
+  .hero .soon {
+    background: var(--dark-accent);
+    border-color: var(--dark-hard);
+    color: var(--kiln-brown);
+  }
+
+  .join-button {
+    box-shadow: 3px 3px 0 var(--dark-hard);
+  }
+}
